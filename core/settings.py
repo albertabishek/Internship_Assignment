@@ -127,3 +127,6 @@ REST_FRAMEWORK = {
 # Celery Configuration
 CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
+
+# Telegram Bot Token
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='')
