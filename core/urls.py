@@ -23,3 +23,5 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('api/get-token/', views.obtain_auth_token), #Endpoint to get auth token
 ]
+
+#curl -H "Authorization: 99fb1c2ef24863693c1a8fb03a2d8c1984644769" http://127.0.0.1:8000/api/protected/
