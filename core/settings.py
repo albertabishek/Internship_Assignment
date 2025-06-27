@@ -130,3 +130,4 @@ CELERY_RESULT_BACKEND = config('CELERY_BROKER_URL', default='redis://localhost:6
 
 # Telegram Bot Token
 TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='')
+TELEGRAM_BOT_API_SECRET = config('TELEGRAM_BOT_API_SECRET', default='')
