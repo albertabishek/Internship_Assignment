@@ -1,5 +1,10 @@
 # Django Backend Internship Assignment
 
+<p align="center">
+  <img src="./docs/images/architecture.png" alt="Project Architecture Diagram" width="800"/>
+</p>
+
+
 This project is a submission for the Django internship assignment, demonstrating a robust backend architecture. It features a Django REST Framework API with token-based authentication, background task processing with Celery and Redis, and a decoupled Telegram bot for user interaction. The project is configured for a production-like environment using environment variables for all secrets.
 
 ## Final Architecture
