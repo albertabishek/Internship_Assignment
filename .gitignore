@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-wheel-metadata/
+
+# VSCode
+.vscode/
+
+# Environment
+.env
+
+# Django
+*.log
+db.sqlite3
