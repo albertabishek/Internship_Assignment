@@ -192,3 +192,20 @@ Keep this terminal open.
 | 4. Swagger UI API Documentation  | ![Swagger UI](./docs/images/swagger_ui.png) |
 | 5. Bot Script Exection | ![Bot Script](./docs/images/Bot_Script.png) |
 ```
+
+---
+
+## Personal Statement & Learning Journey
+
+> This assignment was an excellent opportunity to go beyond theoretical knowledge and build a comprehensive, multi-service application. The process of integrating Django, Celery, and a decoupled Telegram bot involved **significant problem-solving**, particularly when diagnosing and resolving complex `asyncio` event loop conflicts and Redis connection issues on a Windows environment.
+>
+> The final decoupled architecture—with the bot as a standalone service communicating via a secure API—is _a direct result of that debugging journey_. It represents a more robust and scalable solution, and I am proud of the resilience and **clean design** achieved.
+>
+> I am a dedicated and enthusiastic learner with a strong commitment to:
+> -   Writing **clean, well-documented code** and adopting professional development practices.
+> -   Quickly learning and **adapting to new technologies** and workflows.
+> -   Bringing a genuine **passion for backend development** and creative problem-solving to every challenge.
+>
+> I am eager to contribute meaningfully to your projects and grow as a developer with your team.
+>
+> Thank you for this challenging and rewarding opportunity.
