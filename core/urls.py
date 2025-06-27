@@ -14,14 +14,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    path('api/get-token/', views.obtain_auth_token), #Endpoint to get auth token
+    path("admin/", admin.site.urls),
+    path("api/", include("api.urls")),
+    path("api/get-token/", views.obtain_auth_token),  # Endpoint to get auth token
+    # API Documentation URLs
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    # Optional UI:
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/schema/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),
 ]
 
-#curl -H "Authorization: 99fb1c2ef24863693c1a8fb03a2d8c1984644769" http://127.0.0.1:8000/api/protected/
+# curl -H "Authorization: 99fb1c2ef24863693c1a8fb03a2d8c1984644769" http://127.0.0.1:8000/api/protected/

@@ -1,4 +1,4 @@
-from django.conf import settings 
+from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -7,33 +7,38 @@ from .serializers import UserSerializer, TelegramUserSerializer
 from .models import TelegramUser
 
 
-# Public endpoint 
+# Public endpoint
 class PublicDataView(APIView):
     """
     An endpoint that is accessible to everyone.
     """
-    permission_classes = [] # No permissions required
-    authentication_classes = [] # No authentication required
+
+    permission_classes = []  # No permissions required
+    authentication_classes = []  # No authentication required
 
     def get(self, request, *args, **kwargs):
         return Response({"message": "This is a public endpoint. Anyone can see this!"})
 
 
-# Protected endpoint 
+# Protected endpoint
 class ProtectedDataView(APIView):
     """
     An endpoint only accessible to authenticated users.
     Requires a valid token in the 'Authorization: Token <your_token>' header.
     """
-    permission_classes = [IsAuthenticated] # Only authenticated users can access
+
+    permission_classes = [IsAuthenticated]  # Only authenticated users can access
 
     def get(self, request, *args, **kwargs):
         serializer = UserSerializer(request.user)
-        return Response({
-            "message": "You are authenticated! Only you can see this.",
-            "user_data": serializer.data
-        })
-    
+        return Response(
+            {
+                "message": "You are authenticated! Only you can see this.",
+                "user_data": serializer.data,
+            }
+        )
+
+
 # API for the bot
 class CreateTelegramUserView(APIView):
     """
@@ -41,6 +46,7 @@ class CreateTelegramUserView(APIView):
     This will be called by our separate bot script.
     We will secure it with a simple secret key.
     """
+
     permission_classes = []
     authentication_classes = []
 
@@ -49,7 +55,9 @@ class CreateTelegramUserView(APIView):
         secret = request.headers.get("X-Bot-Secret")
         # The 'settings' object is now correctly imported and available
         if not secret or secret != settings.TELEGRAM_BOT_API_SECRET:
-            return Response({"error": "Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response(
+                {"error": "Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED
+            )
 
         serializer = TelegramUserSerializer(data=request.data)
         if serializer.is_valid():
