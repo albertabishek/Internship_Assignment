@@ -191,7 +191,7 @@ Keep this terminal open.
 | 3. Django Admin with Telegram Users | ![Admin Panel](./docs/images/admin_panel.png) |
 | 4. Swagger UI API Documentation  | ![Swagger UI](./docs/images/swagger_ui.png) |
 | 5. Bot Script Exection | ![Bot Script](./docs/images/Bot_Script.png) |
-```
+
 
 ---
 
@@ -209,3 +209,4 @@ Keep this terminal open.
 > I am eager to contribute meaningfully to your projects and grow as a developer with your team.
 >
 > Thank you for this challenging and rewarding opportunity.
+```
