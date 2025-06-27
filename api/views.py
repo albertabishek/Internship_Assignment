@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .serializers import UserSerializer, TelegramUserSerializer
 from .models import TelegramUser
-from drf_spectacular.utils import extend_schema
+
 
 # Public endpoint
 class PublicDataView(APIView):
@@ -36,7 +36,6 @@ class ProtectedDataView(APIView):
 
 
 # API for the bot
-@extend_schema(exclude=True)
 class CreateTelegramUserView(APIView):
     """
     An endpoint to create a new telegram user.
